@@ -1,8 +1,12 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlockSearchTestConsole", "BlockSearchTestConsole\BlockSearchTestConsole.csproj", "{5A93F6BF-2A07-4DA4-B2D4-EECE60144D5B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlockSearch.TestConsole", "BlockSearch.TestConsole\BlockSearch.TestConsole.csproj", "{5A93F6BF-2A07-4DA4-B2D4-EECE60144D5B}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlockSearch.Avalonia", "BlockSearch.Avalonia\BlockSearch.Avalonia.csproj", "{CABF9AC2-83EE-4500-A557-73D90C03F4D2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlockSearch.Database", "BlockSearch.Database\BlockSearch.Database.csproj", "{4A717680-81CD-4D67-BBD7-B1082AB5CF2F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlockSearch.Internal", "BlockSearch.Internal\BlockSearch.Internal.csproj", "{BA305F1D-F8BA-4E2D-905B-30DA8A5E17ED}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -18,5 +22,13 @@ Global
 		{CABF9AC2-83EE-4500-A557-73D90C03F4D2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CABF9AC2-83EE-4500-A557-73D90C03F4D2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CABF9AC2-83EE-4500-A557-73D90C03F4D2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4A717680-81CD-4D67-BBD7-B1082AB5CF2F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4A717680-81CD-4D67-BBD7-B1082AB5CF2F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4A717680-81CD-4D67-BBD7-B1082AB5CF2F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4A717680-81CD-4D67-BBD7-B1082AB5CF2F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BA305F1D-F8BA-4E2D-905B-30DA8A5E17ED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BA305F1D-F8BA-4E2D-905B-30DA8A5E17ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BA305F1D-F8BA-4E2D-905B-30DA8A5E17ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BA305F1D-F8BA-4E2D-905B-30DA8A5E17ED}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
