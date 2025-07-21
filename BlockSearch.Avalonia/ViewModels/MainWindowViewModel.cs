@@ -1,6 +1,6 @@
 ﻿namespace BlockSearch.Avalonia.ViewModels;
 
-public partial class MainWindowViewModel : ViewModelBase
+public class MainWindowViewModel : BaseViewModel
 {
-    public string Greeting { get; } = "Welcome to Avalonia!";
+    
 }

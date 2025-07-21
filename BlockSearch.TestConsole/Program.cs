@@ -1,9 +1,6 @@
-﻿// See https://aka.ms/new-console-template for more information
+﻿using BlockSearch.Database;
 
-using BlockSearchTestConsole;
+BlockSearchDatabase database = new BlockSearchDatabase();
 
-Console.WriteLine("Hello, World!");
-
-BlockSearchTestDatabase database = new BlockSearchTestDatabase();
-
-database.InitializeDatabase();
+database.Initialize();
+database.Dispose();
