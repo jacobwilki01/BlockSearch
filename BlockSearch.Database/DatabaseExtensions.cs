@@ -1,3 +1,4 @@
+using System.Data;
 using BlockSearch.Database.Internal;
 using Microsoft.Data.Sqlite;
 
@@ -47,7 +48,7 @@ public static class DatabaseExtensions
             curForeignKey++;
         }
         
-        connection.CreateTableWithForeignKey(tableName, referenceColumns);
+        connection.CreateTableWithForeignKey(tableName, referenceColumns + ", " + foreignKeyConstraints);
     }
     
     /// <summary>
@@ -76,6 +77,19 @@ public static class DatabaseExtensions
     }
 
     /// <summary>
+    /// Drops the specified table.
+    /// </summary>
+    public static void DropTable(this SqliteConnection connection, string tableName)
+    {
+        if (connection.State != System.Data.ConnectionState.Open)
+            throw new ArgumentException("Data.ConnectionState must be open");
+        
+        SqliteCommand command = connection.CreateCommand();
+        command.CommandText = @"DROP TABLE " + tableName + ";";
+        command.ExecuteNonQuery();
+    }
+
+    /// <summary>
     /// Checks if a table exists in the database.
     /// </summary>
     public static bool TableExists(this SqliteConnection connection, string tableName)
@@ -95,5 +109,37 @@ public static class DatabaseExtensions
         
         reader.Close();
         return false;
+    }
+
+
+    public static void InsertData(this SqliteConnection connection, string tableName, string columns, string values)
+    {
+        if (connection.State != System.Data.ConnectionState.Open)
+            throw new ArgumentException("Data.ConnectionState must be open");
+        
+        SqliteCommand command = connection.CreateCommand();
+        command.CommandText = @"INSERT INTO " + tableName + " (" + columns + ") VALUES (" + values + ")";
+        command.ExecuteNonQuery();
+    }
+
+
+    public static int GetObjectId(this SqliteConnection connection, string tableName, string columnName,
+        string condition)
+    {
+        if (connection.State != System.Data.ConnectionState.Open)
+            throw new ArgumentException("Data.ConnectionState must be open");
+        
+        SqliteCommand command = connection.CreateCommand();
+        command.CommandText = @"SELECT " + columnName + " FROM " + tableName + " WHERE " + condition;
+        SqliteDataReader reader = command.ExecuteReader();
+
+        int id = -1;
+        
+        while (reader.Read())
+            id = reader.GetInt32(0);
+        
+        reader.Close();
+        
+        return id;
     }
 }

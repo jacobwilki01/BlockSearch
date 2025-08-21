@@ -4,6 +4,7 @@
     <option name="projectPerEditor">
       <map>
         <entry key="BlockSearch.Avalonia/App.axaml" value="BlockSearch.Avalonia/BlockSearch.Avalonia.csproj" />
+        <entry key="BlockSearch.Avalonia/Views/MainWindow.axaml" value="BlockSearch.Avalonia/BlockSearch.Avalonia.csproj" />
       </map>
     </option>
   </component>
